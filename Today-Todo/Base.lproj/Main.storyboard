@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8jd-vO-ryX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JmF-Sh-RlO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Todo ListVC-->
+        <!--Today-Todo-->
         <scene sceneID="z5Z-Em-32y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oP1-CG-RZl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="8jd-vO-ryX" customClass="TodoListVC" customModule="Today_Todo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nvp-Iu-eUW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -53,9 +53,38 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hf5-wm-Hd8"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Today-Todo" id="Cdz-hS-Sn5"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oP1-CG-RZl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="107"/>
+            <point key="canvasLocation" x="934.78260869565224" y="106.47321428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DLJ-RQ-f3C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JmF-Sh-RlO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kTH-vf-v12">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="MintGreen"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8jd-vO-ryX" kind="relationship" relationship="rootViewController" id="bUQ-ve-AvH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kin-75-8Oo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.637681159420293" y="106.47321428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="MintGreen">
+            <color red="0.0078431372549019607" green="0.74901960784313726" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
