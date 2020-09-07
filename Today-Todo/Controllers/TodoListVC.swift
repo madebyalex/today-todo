@@ -35,9 +35,9 @@ class TodoListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         newItem4.title = "Prepare a new to-do list"
         items.append(newItem4)
         
-//        if let savedItems = defaults.array(forKey: "TodoListArray") as? [String] {
-//            items = savedItems
-//        }
+        if let savedItems = defaults.array(forKey: "TodoListArray") as? [Item] {
+            items = savedItems
+        }
     }
     
     
