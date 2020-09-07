@@ -13,10 +13,15 @@ class TodoListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     var items = ["Item #1", "Second item", "Another one", "Number 4", "The last one"]
+    
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        if let savedItems = defaults.array(forKey: "TodoListArray") as? [String] {
+            items = savedItems
+        }
     }
     
     
@@ -55,8 +60,18 @@ class TodoListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let alert = UIAlertController(title: "Add New Todo Item", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add item", style: .default) { (action) in
-            // What will happen once the user clicks the Add Item button on our Alert
-            self.items.append(textField.text ?? "New task")
+            
+            // Checking for an empty input
+            if textField.text != "" {
+                
+                // What will happen once the user clicks the Add Item button on our Alert
+                self.items.append(textField.text!)
+                
+            } else {
+                return
+            }
+            
+            self.defaults.set(self.items, forKey: "TodoListArray")
             self.tableView.reloadData()
         }
         

@@ -11,11 +11,34 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        print("didFinishLaunchingWithOptions")
+        
+        // Printing the location of where the data becomes saved
+        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true))
+        
         // Override point for customization after application launch.
         return true
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        print("applicationDidEnterBackground")
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        print("applicationWillTerminate")
     }
 
     // MARK: UISceneSession Lifecycle
