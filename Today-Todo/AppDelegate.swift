@@ -12,10 +12,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        print("didFinishLaunchingWithOptions")
+//        print("didFinishLaunchingWithOptions")
         
         // Printing the location of where the data becomes saved
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true))
+//        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true))
         
         // Override point for customization after application launch.
         return true
