@@ -10,7 +10,9 @@ import UIKit
 
 class TodoListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let items = ["Item #1", "Second item", "Another one", "Number 4", "The last one"]
+    @IBOutlet weak var tableView: UITableView!
+    
+    var items = ["Item #1", "Second item", "Another one", "Number 4", "The last one"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,5 +46,30 @@ class TodoListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         }
     }
+    
+    //MARK: - Add New Items
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add New Todo Item", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add item", style: .default) { (action) in
+            // What will happen once the user clicks the Add Item button on our Alert
+            self.items.append(textField.text ?? "New task")
+            self.tableView.reloadData()
+        }
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "E.g. Save the world"
+            textField = alertTextField
+        }
+        
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
 }
 
